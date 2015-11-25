@@ -1,3 +1,6 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
+
 module.exports = {
   entry: './src/index.ts',
   output: {
@@ -7,7 +10,10 @@ module.exports = {
   },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
+    alias: {
+      'zepto': 'zepto/zepto.min.js'
+    }
   },
   module: {
     loaders: [
@@ -15,9 +21,11 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'ts-loader' }
     ]
   },
+  devtool: 'source-map',
   plugins: [
-    new webpack.ProvidePlugin({
-      'MutationObserver': 'imports?this=>global!exports?global.MutationObserver!mutationobserver-shim'
-    }),
+    // new webpack.ProvidePlugin({
+    //   'MutationObserver': 'imports?this=>global!exports?global.MutationObserver!mutationobserver-shim',
+    // }),
+    new HtmlWebpackPlugin()
   ]
 }

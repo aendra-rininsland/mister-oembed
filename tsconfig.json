@@ -7,6 +7,18 @@
   "buildOnSave": false,
   "compileOnSave": false,
   "files": [
+    "typings/node/node.d.ts",
+    "typings/oembed/oembed.d.ts",
+    "typings/superagent/superagent.d.ts",
+    "typings/tsd.d.ts",
+    "typings/zepto/zepto.d.ts",
     "src/index.ts"
-  ]
+  ],
+  "filesGlob": [
+    "typings/**/*.ts",
+    "src/index.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
