@@ -1,0 +1,41 @@
+{
+  "name": "mister-oembed",
+  "version": "0.0.1",
+  "description": "One Oembed script to rule them all!",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/webpack/bin/webpack.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aendrew/mister-oembed"
+  },
+  "keywords": [
+    "oembed"
+  ],
+  "author": "Ændrew Rininsland <aendrew.rininsland@thetimes.co.uk> (http://www.aendrew.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aendrew/mister-oembed/issues"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eslint-config-google": "^0.3.0",
+    "karma": "^0.13.15",
+    "karma-mocha": "^0.2.1",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "ts-loader": "^0.7.1",
+    "typescript": "^1.6.2",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "mutationobserver-shim": "^0.3.1",
+    "oembed": "^0.1.0",
+    "request": "^2.67.0",
+    "zepto": "0.0.4"
+  }
+}
