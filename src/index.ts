@@ -9,15 +9,12 @@
  *
  */
 
-/// <reference path="../typings/tsd.d.ts" />
-
 import * as oembed from 'oembed';
-import * as $ from 'zepto';
 
 export default class MisterOEmbed {
-  public constructor(config:IMrOConfigObject) {
-    let container:HTMLElement = config.container ? $(config.container)[0] : document;
-    let selector:string;
+  public constructor(config: IMrOConfigObject) {
+    let container: HTMLElement = config.container ? $(config.container)[0] : document;
+    let selector: string;
 
     if (!config.selector) {
       throw new Error('You must specify a selector');
@@ -26,9 +23,9 @@ export default class MisterOEmbed {
     }
 
     // Observe container for new oEmbed links
-    let observer:MutationObserver = new MutationObserver(function(mutations:Array<MutationRecord>):void {
-      mutations.forEach(function(mutation:MutationRecord):void {
-        for (var i:number = 0; i < mutation.addedNodes.length; i++) {
+    let observer: MutationObserver = new MutationObserver(function(mutations: Array<MutationRecord>): void {
+      mutations.forEach(function(mutation: MutationRecord): void {
+        for (var i: number = 0; i < mutation.addedNodes.length; i++) {
           if ($(mutation.addedNodes).is(selector)) {
             console.log('yay');
           }
@@ -38,7 +35,7 @@ export default class MisterOEmbed {
     observer.observe(container, { childList: true });
   }
 
-  public static get(url:string, config:{}, cb:oembed.CallbackHandler): void {
+  public static get(url: string, config: {}, cb: oembed.CallbackHandler): void {
     oembed.fetch(url, config ? config : {}, cb);
   }
 }

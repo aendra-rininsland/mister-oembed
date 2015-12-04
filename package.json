@@ -34,8 +34,6 @@
   },
   "dependencies": {
     "mutationobserver-shim": "^0.3.1",
-    "oembed": "github:aendrew/node-oembed",
-    "request": "^2.67.0",
-    "zepto": "0.0.4"
+    "oembed": "github:aendrew/oembed.ts"
   }
 }
